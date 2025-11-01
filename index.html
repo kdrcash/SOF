@@ -8,32 +8,32 @@
 <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
+        /* Color Variables */
         :root {
-            /* 컬러 팔레트 재정의: 파란색 톤으로 통일 및 대비 명확화 */
-            --color-primary-dark: #1A3760; /* 핵심 배경/짙은 텍스트 (히어로, 푸터 기준색) */
-            --color-primary-medium: #2A5693; /* 미드나잇 블루 (히어로 그라데이션 끝 색) */
-            --color-accent-gold: #FFC300; /* 강조 색상 (버튼, 하이라이트) */
-            --color-accent-sub: #3B82F6; /* 보조 강조 (파란색) */
+            --color-primary-dark: #1A3760; 
+            --color-primary-medium: #2A5693;
+            --color-accent-gold: #FFC300; 
+            --color-accent-sub: #3B82F6; 
             
-            /* 밝은 배경 섹션을 위한 텍스트 색상 */
+            /* Text Colors (Light Background) */
             --color-text-heading-light: #1A2A47;
             --color-text-body-light: #4A5568;
             --color-text-light-light: #718096;
 
-            /* 어두운 배경 섹션을 위한 텍스트 색상 */
+            /* Text Colors (Dark Background) */
             --color-text-heading-dark: #FFFFFF;
             --color-text-body-dark: rgba(255, 255, 255, 0.85);
             --color-text-light-dark: rgba(255, 255, 255, 0.6);
 
-            --color-background-light: #FFFFFF; /* 중간 섹션을 위한 밝은 배경 */
-            --color-background-dark: var(--color-primary-dark); /* ★ 히어로 시작색과 컬러 매칭 */
-            --color-card-bg: #FFFFFF; /* 밝은 배경 위의 카드 배경 */
-            --color-border: #E2E8F0; /* 밝은 배경 위 보더 */
+            --color-background-light: #FFFFFF;
+            --color-background-dark: var(--color-primary-dark);
+            --color-card-bg: #FFFFFF;
+            --color-border: #E2E8F0;
             --color-shadow-light: rgba(0, 0, 0, 0.05);
             --color-shadow-medium: rgba(0, 0, 0, 0.1);
         }
 
-        /* 기본 스타일 및 Pretendard 적용 */
+        /* Base Styles */
         * {
             box-sizing: border-box;
             font-family: 'Pretendard', sans-serif !important;
@@ -43,23 +43,23 @@
         }
         
         body {
-            background-color: var(--color-background-light); /* 기본 배경색 흰색으로 설정 */
+            background-color: var(--color-background-light);
             color: var(--color-text-body-light);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* 공통 컨테이너 */
+        /* Common Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* 헤더 - 스크롤 인터랙션 추가 */
+        /* Header - Scroll Interaction */
         .main-header {
-            background-color: transparent; /* 초기 투명 */
+            background-color: transparent;
             position: fixed;
             top: 0;
             left: 0;
@@ -69,7 +69,7 @@
             transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
         }
         .main-header.scrolled {
-            background-color: var(--color-card-bg); /* 스크롤 시 흰색 */
+            background-color: var(--color-card-bg);
             box-shadow: 0 2px 15px var(--color-shadow-medium);
             padding: 12px 0;
         }
@@ -81,12 +81,12 @@
         .main-header h1 {
             font-size: 26px;
             font-weight: 700;
-            color: white; /* 초기 텍스트 색상 */
+            color: white;
             letter-spacing: -0.02em;
             transition: color 0.3s ease;
         }
         .main-header.scrolled h1 {
-            color: var(--color-primary-dark); /* 스크롤 시 진한 텍스트 */
+            color: var(--color-primary-dark);
         }
         .home-link {
             color: rgba(255, 255, 255, 0.9);
@@ -97,7 +97,6 @@
             border-radius: 6px;
             border: 1px solid rgba(255, 255, 255, 0.4);
             transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-            text-decoration: none; /* 추가: 헤더 링크 밑줄 제거 */
         }
         .main-header.scrolled .home-link {
             color: var(--color-primary-medium);
@@ -111,7 +110,7 @@
             border-color: #C3DAF0;
         }
 
-        /* 히어로 섹션 (진한 네이비 유지) */
+        /* Hero Section (Dark Background) */
         .hero-section {
             background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary-medium) 100%);
             color: white;
@@ -123,7 +122,7 @@
             display: flex;
             align-items: center;
         }
-        .hero-section::before {
+        .hero-section::before { /* Background Pattern */
             content: '';
             position: absolute;
             top: 0;
@@ -169,7 +168,7 @@
             margin-right: auto;
         }
 
-        /* CTA 버튼 */
+        /* CTA Button */
         .cta-button {
             display: inline-block;
             background-color: var(--color-accent-gold); 
@@ -183,7 +182,7 @@
             box-shadow: 0 10px 30px rgba(255, 195, 0, 0.5);
             animation: scaleIn 1.4s ease-out;
             border: none;
-            text-decoration: none; /* 명시적 밑줄 제거 */
+            text-decoration: none; 
         }
         .cta-button:hover {
             background-color: #E6B000;
@@ -198,10 +197,10 @@
             animation: fadeIn 1.6s ease-out;
         }
 
-        /* 핵심 가치 섹션 (화이트 배경 유지) */
+        /* Value Section (White Background) */
         .value-section {
             background-color: var(--color-background-light); 
-            padding: 80px 0;
+            padding: 100px 0 50px 0; 
             color: var(--color-text-body-light);
         }
         .value-section h3 {
@@ -223,7 +222,7 @@
             padding: 30px;
             border-radius: 12px;
             background-color: var(--color-card-bg); 
-            box-shadow: 0 5px 20px var(--color-shadow-medium); /* 밝은 그림자 사용 */
+            box-shadow: 0 5px 20px var(--color-shadow-medium);
             border: 1px solid #F0F0F0;
             transition: all 0.3s ease;
         }
@@ -248,10 +247,10 @@
             color: var(--color-text-light-light);
         }
 
-        /* 특징 섹션 (화이트 배경 유지) */
+        /* Features Section (White Background) */
         .features-section {
             background-color: var(--color-background-light);
-            padding: 80px 0;
+            padding: 50px 0 100px 0; 
             color: var(--color-text-body-light);
         }
         .features-section h3 {
@@ -273,7 +272,7 @@
             box-shadow: 0 5px 20px var(--color-shadow-light);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             text-align: left;
-            border-left: 5px solid var(--color-accent-sub); /* 파란색 강조 유지 */
+            border-left: 5px solid var(--color-accent-sub);
         }
         .feature-card:hover {
             transform: translateY(-8px);
@@ -281,7 +280,7 @@
         }
         .feature-card .icon {
             font-size: 32px;
-            color: var(--color-accent-sub); /* 파란색 유지 */
+            color: var(--color-accent-sub);
             margin-bottom: 10px;
         }
         .feature-card h4 {
@@ -295,13 +294,12 @@
             color: var(--color-text-light-light);
         }
 
-        /* 정보 섹션 (Info Block - 히어로 컬러 매칭) */
+        /* Info Block (Dark Background Matched to Hero/Footer) */
         .info-block {
             padding: 100px 0;
-            background-color: var(--color-background-dark); /* 히어로 시작색과 컬러 매칭 */
+            background-color: var(--color-background-dark);
             color: white;
             text-align: center;
-            border-top: none; /* 노란색 중간선 제거 */
         }
         .info-block h3 {
             font-size: 40px;
@@ -336,11 +334,11 @@
             text-decoration: none !important;
         }
 
-        /* 푸터 (히어로 컬러 매칭) */
+        /* Footer (Dark Background Matched to Hero/Info Block) */
         .main-footer {
             text-align: center;
             padding: 50px 20px;
-            background-color: var(--color-background-dark); /* 히어로 시작색과 컬러 매칭 */
+            background-color: var(--color-background-dark);
             font-size: 14px;
             color: var(--color-text-light-dark);
         }
@@ -349,80 +347,71 @@
         }
         .main-footer a {
             color: var(--color-accent-gold);
-            text-decoration: none; /* 푸터 일반 링크 밑줄 제거 */
+            text-decoration: none;
             transition: color 0.2s ease;
         }
         .main-footer a:hover {
             color: white;
-            text-decoration: none; /* 푸터 호버 시 밑줄 제거 */
+            text-decoration: none;
         }
 
-        /* 모바일 반응형 */
+        /* Mobile Responsive */
         @media (max-width: 767px) {
-            /* 1. 공통 모바일 스타일 재설정 */
             .container {
-                padding: 0 16px; /* 모바일 패딩 조정 */
+                padding: 0 16px;
             }
 
-            /* 2. 모바일 헤더 오버라이드 (밝고 고정된 헤더) */
+            /* Mobile Header Override */
             .main-header {
                 padding: 12px 0 !important;
-                background-color: var(--color-card-bg) !important; /* 항상 흰색 */
+                background-color: var(--color-card-bg) !important;
                 box-shadow: 0 2px 15px var(--color-shadow-medium) !important;
                 position: sticky !important;
                 top: 0;
             }
             .main-header h1 {
-                color: var(--color-text-heading-light) !important; /* 어두운 텍스트 */
+                color: var(--color-text-heading-light) !important;
                 font-size: 22px;
             }
             .home-link {
-                color: var(--color-primary-medium) !important; /* 파란색 텍스트 */
+                color: var(--color-primary-medium) !important;
                 border: 1px solid var(--color-border) !important;
                 background-color: transparent !important;
                 padding: 6px 12px;
                 font-size: 14px;
             }
 
-            /* 3. 히어로 섹션 */
+            /* Hero Section */
             .hero-section {
-                padding: 100px 16px 60px; /* 모바일 패딩 조정 */
+                padding: 100px 16px 60px;
                 min-height: auto;
-            }
-            .hero-content .subtitle {
-                font-size: 17px;
             }
             .hero-content h2 {
                 font-size: 38px;
-                line-height: 1.3;
             }
             .hero-content p {
                 font-size: 16px;
                 margin-bottom: 40px;
             }
-            .cta-button {
-                padding: 16px 30px;
-                font-size: 18px;
-            }
 
-            /* 4. 중간 섹션 (Value, Features) */
-            .value-section, .features-section {
-                padding: 60px 0;
+            /* Section Padding Adjustment */
+            .value-section {
+                padding: 80px 0 40px 0;
+            }
+            .features-section {
+                padding: 40px 0 80px 0;
             }
             .features-section h3, .info-block h3, .value-section h3 {
-                font-size: 26px; /* 제목 크기 조정 */
+                font-size: 26px;
                 margin-bottom: 40px;
             }
             .value-grid {
-                flex-direction: column; /* 세로 배열 */
+                flex-direction: column;
             }
             .value-item {
                 flex-basis: 100%;
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
                 padding: 25px;
-            }
-            .value-item h4 {
-                font-size: 18px;
             }
             .feature-grid {
                 grid-template-columns: 1fr;
@@ -430,30 +419,17 @@
             .feature-card {
                 padding: 25px;
             }
-            .feature-card h4 {
-                font-size: 18px;
-            }
-            .feature-card p {
-                font-size: 14px;
-            }
 
-            /* 5. 정보 블록/푸터 */
+            /* Info Block/Footer */
             .info-block {
                 padding: 80px 0;
-            }
-            .info-block p {
-                font-size: 17px;
-                margin-bottom: 40px;
             }
             .main-footer {
                 padding: 40px 16px;
             }
-            .main-footer p {
-                font-size: 13px;
-            }
         }
 
-        /* 애니메이션 키프레임 */
+        /* Animation Keyframes */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -466,28 +442,30 @@
             from { opacity: 0; transform: scale(0.9); }
             to { opacity: 1; transform: scale(1); }
         }
-        /* 스크롤 애니메이션 (Intersection Observer) */
+        
+        /* Scroll Animation Styles */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition: opacity 1.0s ease-out, transform 1.0s ease-out; /* Animation speed increased to 1.0s */
         }
         .animate-on-scroll.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-        .animate-on-scroll.delay-1 { transition-delay: 0.1s; }
-        .animate-on-scroll.delay-2 { transition-delay: 0.2s; }
-        .animate-on-scroll.delay-3 { transition-delay: 0.3s; }
-        .animate-on-scroll.delay-4 { transition-delay: 0.4s; }
-        .animate-on-scroll.delay-5 { transition-delay: 0.5s; }
+        /* Delay time increased (0.1s -> 0.2s) for smoother rhythm */
+        .animate-on-scroll.delay-1 { transition-delay: 0.2s; }
+        .animate-on-scroll.delay-2 { transition-delay: 0.4s; }
+        .animate-on-scroll.delay-3 { transition-delay: 0.6s; }
+        .animate-on-scroll.delay-4 { transition-delay: 0.8s; }
+        .animate-on-scroll.delay-5 { transition-delay: 1.0s; }
 
     </style>
 </head>
 <body>
     <header class="main-header" id="mainHeader">
         <div class="header-content container">
-            <h1>KDRCash</h1>
+            <h1>Dr.CA$H</h1>
             <a href="https://www.kdrcash.kr/" class="home-link">
                 메인 페이지
             </a>
@@ -569,39 +547,38 @@
             </div>
         </section>
 
-        <!-- Info Block (진한 네이비 유지) -->
+        <!-- Info Block (Dark Background Matched to Hero/Footer) -->
         <section class="info-block">
             <div class="container">
-                <h3 class="animate-on-scroll">자금출처 소명, <span style="color: var(--color-accent-gold);">KDRCash</span>와 함께하세요.</h3>
+                <h3 class="animate-on-scroll">자금출처 소명, <span style="color: var(--color-accent-gold);">Dr.CA$H</span>와 함께하세요.</h3>
                 <p class="animate-on-scroll delay-1">
                     자산 취득은 성공적인 재테크의 결실입니다. 이 결실을 지키기 위한 첫 단계, 
-                    KDRCash 자금출처 계산기로 불안감을 해소하고 명확한 계획을 세우십시오.
+                    Dr.CA$H 자금출처 계산기로 불안감을 해소하고 명확한 계획을 세우십시오.
                 </p>
                 <a href="https://drcash.kr/home/account" class="small-cta animate-on-scroll delay-2">전문가 상담 신청하기</a>
             </div>
         </section>
     </main>
     
-    <!-- Footer (진한 네이비 유지) -->
+    <!-- Footer (Dark Background Matched to Hero/Info Block) -->
     <footer class="main-footer">
-        <p>KDRCash | 자산 관리의 새로운 기준</p>
-        <p>&copy; 2024 KDRCash. All rights reserved.</p>
-        <p><a href="#">개인정보처리방침</a> | <a href="#">이용약관</a></p>
+        <p>Dr.CA$H | 자산 관리의 새로운 기준</p>
+        <p>&copy; 2024 한국병의원데이터. All Rights Reserved</p>
     </footer>
 
     <script>
-        // Intersection Observer를 사용한 스크롤 애니메이션
+        // Intersection Observer for scroll animations
         const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // 성능 최적화를 위해 한 번 실행 후 관찰 중단
+                    observer.unobserve(entry.target); // Stop observing after animation
                 }
             });
         }, {
-            threshold: 0.1, // 요소가 10% 보일 때
+            threshold: 0.1, // Trigger when 10% visible
             rootMargin: '0px 0px -50px 0px'
         });
 
@@ -609,11 +586,9 @@
             observer.observe(el);
         });
 
-        // 헤더 스크롤 효과 (투명 -> 불투명)
+        // Header Scroll Effect (Transparent -> Opaque)
         const mainHeader = document.getElementById('mainHeader');
         
-        // 모바일에서는 스크롤 효과가 비활성화되도록 CSS에서 sticky 처리했으나, 
-        // 데스크톱 환경을 위해 JavaScript 로직은 유지합니다.
         window.addEventListener('scroll', () => {
             if (window.innerWidth >= 768) {
                 if (window.scrollY > 50) {
