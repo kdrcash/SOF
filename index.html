@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자금출처 계산기 | 스마트한 자산 관리, 당신의 시작</title>
     
-<style>
-        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+    <!-- [폰트 최적화 1] CDN 서버 미리 연결 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    
+    <!-- [폰트 최적화 2] @import 대신 link 태그 사용 (속도 향상) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 
+    <style>
         /* Color Variables */
         :root {
             --color-primary-dark: #1A3760; 
@@ -36,7 +40,9 @@
         /* Base Styles */
         * {
             box-sizing: border-box;
-            font-family: 'Pretendard', sans-serif !important;
+            /* [폰트 최적화 3] 폰트 스택 상세 지정 
+               Pretendard 로딩 전 시스템 고딕체를 보여주어 덜컥거림 최소화 */
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', sans-serif !important;
             letter-spacing: -0.01em;
             margin: 0;
             padding: 0;
@@ -482,7 +488,7 @@
                     간편하고 직관적인 계산기를 통해 잠재적 위험을 파악해 보세요.
                 </p>
 
-                <a href="https://drcash.kr/home/account" class="cta-button">
+                <a href="https://drcash.kr/" class="cta-button" target="_blank">
                     지금 바로 자금출처 예측하기 🚀
                 </a>
                 <p class="cta-disclaimer">
@@ -554,7 +560,7 @@
                     자산 취득, 불필요한 리스크를 최소화해야 합니다.<br>
                     Dr.CA$H 자금출처 계산기로 불안감을 해소하고 명확한 계획을 세워보세요.
                 </p>
-                <a href="https://drcash.kr/home/account" class="small-cta animate-on-scroll delay-2">전문가 상담 신청하기</a>
+                <a href="https://drcash.kr/" class="small-cta animate-on-scroll delay-2" target="_blank">전문가 상담 신청하기</a>
             </div>
         </section>
     </main>
@@ -600,4 +606,3 @@
     </script>
 </body>
 </html>
-
